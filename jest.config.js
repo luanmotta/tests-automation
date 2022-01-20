@@ -3,6 +3,7 @@ module.exports = {
   collectCoverageFrom: [
     "**/*.{js,jsx,ts,tsx}",
     "!**/*.d.ts",
+    "!**/cypress/**",
     "!**/node_modules/**",
   ],
   moduleNameMapper: {
