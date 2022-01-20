@@ -9,10 +9,12 @@ jobs:
         run: yarn
       - name: Run jest unit tests
         run: yarn test
+      - name: Build project
+        run: yarn build
       - name: Run Cypress E2E tests
         uses: cypress-io/github-action@v2
         with:
-          start: yarn build && yarn start
+          start: yarn start
           wait-on: "http://localhost:3000"
           browser: chrome
           headless: true
