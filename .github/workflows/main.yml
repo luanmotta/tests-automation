@@ -11,3 +11,8 @@ jobs:
         run: yarn test
       - name: Run Cypress E2E tests
         uses: cypress-io/github-action@v2
+        with:
+          start: yarn build && yarn start
+          wait-on: "http://localhost:3000"
+          browser: chrome
+          headless: true
