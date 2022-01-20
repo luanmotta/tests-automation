@@ -8,7 +8,11 @@ jobs:
       - name: Install modules
         run: yarn
       - name: Run jest unit tests
-        run: yarn test
+        run: yarn jest --coverage
+      - name: Sending tests reports to Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Build project
         run: yarn build
       - name: Run Cypress E2E tests
